@@ -8,7 +8,6 @@ find_path( OPENCV_INCLUDE_PATH opencv2/opencv.hpp
 	${EXT_PATH}/include
 	DOC "The directory where opencv2/opencv.hpp resides")
 find_library(OPENCV_LIB_PATH opencv_core
-	/home/psastras/share/lib
 	/usr/lib64
 	/usr/lib
 	/usr/local/lib64
