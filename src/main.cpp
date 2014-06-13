@@ -46,7 +46,8 @@ int main(int argc, char *argv[]) {
 	}
 
 	std::vector<std::string> icon_file_list = list_files(iconfolder_location, ".png");
-		
+	std::random_shuffle(icon_file_list.begin(), icon_file_list.end());
+	
 	if(icon_file_list.size() == 0) {
 		std::cerr << "No png images found." << std::endl;
 	}
@@ -62,11 +63,11 @@ int main(int argc, char *argv[]) {
 		std::vector<int> hist(180, 0);
 		for(int j=0; j<tmp.size().area(); j++) {			
 			cv::Vec3b hsv_pixel = tmp.at<cv::Vec3b>(j);
-			if((int)(hsv_pixel[1]) > 128 && (int)(hsv_pixel[2]) > 128)
+			if((int)(hsv_pixel[1]) > 64 && (int)(hsv_pixel[2]) > 32)
 				hist[(int)(hsv_pixel[0])]++;			
 		}
 		auto off = std::max_element(hist.begin(), hist.end());
-		hues[i] = std::pair<float, int>(std::distance(hist.begin(), off), i);
+		hues[i] = std::pair<float, int>(( std::distance(hist.begin(), off) + 70) % 180, i);
 	}
 	std::sort(hues.begin(), hues.end());
 
