@@ -11,9 +11,11 @@ To compile wallpaper generator,
 	make
 
 To fetch icons
+
 	cd dota2iconwall/src
 	python fetch_icons.py ../icons
 
 To make wallpaper
+
 	cd dota2iconwall/build
 	./dota2iconwall ../icons
