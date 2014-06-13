@@ -1,0 +1,4 @@
+SET(dota2iconwp_srcs main.cpp)
+ADD_EXECUTABLE(dota2iconwp ${dota2iconwp_srcs})
+INCLUDE_DIRECTORIES(dota2iconwp ${BOOST_INCLUDES} ${OPENCV_INCLUDES})
+TARGET_LINK_LIBRARIES(dota2iconwp ${BOOST_LIBRARIES} ${OPENCV_LIBRARIES})
