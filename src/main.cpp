@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	if (argc > 3) {
-		outputimage_location = argv[4];
+		outputimage_location = argv[3];
 	}
 
 	if(!boost::filesystem::exists(iconfolder_location)) {
